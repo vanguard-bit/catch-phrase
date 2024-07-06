@@ -1,2 +1,3 @@
-subs/anime/*.srt
-subs/anime/subs
+*.srt
+*.ass
+del.py
