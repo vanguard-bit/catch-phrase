@@ -1,3 +1,4 @@
 *.srt
 *.ass
 del.py
+__pycache__/
