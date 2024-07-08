@@ -6,16 +6,17 @@ or the same in japnese
 
 
 This codebase uses subtitles to search for the catch-phrases using "pysubs2" library(subtitles in srt format)
-and "moviepy" to clip the videos(videos in mp4)
+and "moviepy" to clip the videos(videos in mp4).
 
-change '^(.*)?(it\'s|it\'s a|quite|how|very|really) (cute).*?$' in main.py with your catch.phrase and it should work
+change ['^(.*)?(it\'s|it\'s a|quite|how|very|really) (cute).*?$'](main.py) with your catch-phrase and it should work...probably.
+
 Still in beta stages
 
 
-TODO:
-Doucmentation
-Make it more user friendly
-Support for subtitles format and also other video formats
-Support for movies and series along with anime
-Create a branch and use ffmpeg and its python wrapper to improve video quality
+* TODO:
+  1. Doucmentation
+  2. Make it more user friendly
+  3. Support for subtitles format and also other video formats
+  4. Support for movies and series along with anime
+  5. Create a branch and use ffmpeg and its python wrapper to improve video quality
 
