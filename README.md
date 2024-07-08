@@ -1,7 +1,6 @@
 Have you ever thought you'd like to see all instances of catch-phrases one character says....... all at once?
 
-For example "How Cute" from Kaguya-Sama: Love is War
-
+[For example "How Cute" from Kaguya-Sama: Love is War](MergedOutput.mp4)
 or the same in japnese
 
 
@@ -14,9 +13,9 @@ Still in beta stages
 
 
 TODO:
-# Doucmentation
-# Make it more user friendly
-# Support for subtitles format and also other video formats
-# Support for movies and series along with anime
-# Create a branch and use ffmpeg and its python wrapper to improve video quality
+Doucmentation
+Make it more user friendly
+Support for subtitles format and also other video formats
+Support for movies and series along with anime
+Create a branch and use ffmpeg and its python wrapper to improve video quality
 
