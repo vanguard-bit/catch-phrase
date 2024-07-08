@@ -14,9 +14,15 @@ def cal():
         os.chdir('vids' + sep + 'anime')
     bias_dict = {}
     path = '%s' + sep + '%s' + sep + '%s'
-    for a, b, fn in os.walk('dub'):
-        for file in fn:
+    if not os.path.isdir('dub'):
+        raise Exception('dub directory not found.')
+    if not os.path.isdir('sub'):
+        raise Exception('sub directory not found.')
+    for ((a, b, fn), (x, y, z)) in zip(os.walk('dub'), os.walk('sub')):
+        for (file, f) in zip(fn, z):
             if file.endswith('.mp4'):
+                if f != file:
+                    raise Exception(file, 'does not exist.')
                 subpath = path % ('sub', file[0:3], file)
                 dubpath = path % ('dub', file[0:3], file)
                 subvid = me.VideoFileClip(subpath)
