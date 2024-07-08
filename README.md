@@ -1,7 +1,8 @@
 Have you ever thought you'd like to see all instances of catch-phrases one character says....... all at once?
 
 [For example "How Cute" from Kaguya-Sama: Love is War](MergedOutput.mp4)
-or the same in japnese
+
+[or the same in japnese](MergedOutput1.mp4)
 
 
 
