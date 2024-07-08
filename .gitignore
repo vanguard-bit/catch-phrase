@@ -3,4 +3,4 @@
 del.py
 __pycache__/
 *.mp4
-!Merged Output.mp4
+!MergedOutput.mp4
