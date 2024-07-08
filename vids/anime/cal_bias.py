@@ -1,5 +1,6 @@
 import moviepy.editor as me
 import os.path
+import pprint as p
 
 """
 Calculate bias if both dub and sub version is present
@@ -15,12 +16,22 @@ def cal():
     path = '%s' + sep + '%s' + sep + '%s'
     for a, b, fn in os.walk('dub'):
         for file in fn:
-            subpath = path % ('sub', file[0:3], file)
-            dubpath = path % ('dub', file[0:3], file)
-            subvid = me.VideoFileClip(subpath)
-            dubvid = me.VideoFileClip(dubpath)
-            val = int(dubvid.duration - subvid.duration)
-            bias_dict[file[:-4]] = val if val != 0 else 12  # sometimes bias wont be calculated
-    os.chdir(curdir)                                        # so manually calculate and assign to 'val'
+            if file.endswith('.mp4'):
+                subpath = path % ('sub', file[0:3], file)
+                dubpath = path % ('dub', file[0:3], file)
+                subvid = me.VideoFileClip(subpath)
+                dubvid = me.VideoFileClip(dubpath)
+                val = int(dubvid.duration - subvid.duration)
+                bias_dict[file[:-4]] = val if val != 0 else 12
+
+                """
+                # sometimes bias wont be calculated
+                so manually calculate and assignto'val'
+                """
+
+    os.chdir(curdir)
     return bias_dict
 
+
+if __name__ == '__main__':
+    p.pprint(cal())

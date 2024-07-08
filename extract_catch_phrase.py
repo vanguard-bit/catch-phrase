@@ -29,10 +29,11 @@ class anime:
 
 # optlist = []
 # optlist.append('anime')
-regobj = re.compile(r'^(.*)?(it\'s|it\'s a|quite|how|very|really) (cute).*?$', re.I)
 
 
-def search_list():
+def search_list(reg):
+    # regobj = re.compile(r'^(.*)?(it\'s|it\'s a|quite|how|very|really) (cute).*?$', re.I)
+    regobj = reg
     obj_list = []
     sep = os.path.sep * 2
 
@@ -53,3 +54,7 @@ def search_list():
     sear_result = list(dict.fromkeys(sear_result))
     return sear_result
 
+
+if __name__ == '__main__':
+    for obj in search_list(re.compile(r'^(.*)?(it\'s|it\'s a|quite|how|very|really) (cute).*?$', re.I)):
+        print(obj)

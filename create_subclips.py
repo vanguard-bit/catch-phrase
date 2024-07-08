@@ -4,8 +4,8 @@ import os.path
 import vids.anime.cal_bias as cal_bias
 
 
-def run():
-    obj_list = catch_phrase.search_list()
+def run(reg, bias_factor=False):
+    obj_list = catch_phrase.search_list(reg)
 
     i = 1
     sep = os.path.sep * 2
@@ -24,9 +24,11 @@ def run():
 
         start = (obj.start[0] * 60 + obj.start[1])
         startlen = start - 3 if start - 3 > 0 else start
+        startlen = startlen if bias_factor is False else startlen + 12
 
         end = (obj.end[0] * 60 + obj.end[1])
         endlen = end + 3 if end + 3 < vf.duration * 60 else end
+        endlen = endlen if bias_factor is False else endlen + 12
 
         vf = vf.subclip(startlen, endlen)
         vf.write_videofile(outfile)
