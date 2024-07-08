@@ -1,11 +1,14 @@
 import moviepy.editor as me
 import extract_catch_phrase as catch_phrase
 import os.path
+import re
 import vids.anime.cal_bias as cal_bias
 
 
 def run(reg, bias_factor=False):
     obj_list = catch_phrase.search_list(reg)
+    if obj_list == None:
+        assert Exception("Subtitles not found")
 
     i = 1
     sep = os.path.sep * 2
@@ -54,3 +57,7 @@ def run(reg, bias_factor=False):
 
         vf = vf.subclip(startlen, endlen)
         vf.write_videofile(outfile)
+
+
+if __name__ == '__main__':
+    run(re.compile(r'^(.*)?(it\'s|it\'s a|quite|how|very|really) (cute).*?$', re.I), True)
